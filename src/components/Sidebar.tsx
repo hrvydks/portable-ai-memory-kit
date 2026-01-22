@@ -1,10 +1,10 @@
 import Link from "next/link";
 
 const navItems = [
-  { href: "/canon", label: "My Basics" },
-  { href: "/current", label: "What’s going on now" },
-  { href: "/deltas", label: "Updates" },
-  { href: "/context-pack", label: "Copy for AI" },
+  { href: "/canon", label: "Canon" },
+  { href: "/current", label: "Current" },
+  { href: "/deltas", label: "Deltas" },
+  { href: "/context-pack", label: "Context Pack" },
   { href: "/settings", label: "Settings" },
   { href: "/quickstart", label: "Quickstart" }
 ];
