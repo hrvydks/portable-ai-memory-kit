@@ -111,78 +111,75 @@ export default function ContextPackPage() {
       </header>
 
       <section className="grid gap-4 md:grid-cols-[minmax(0,1fr)_360px]">
-        <details className="rounded-2xl border border-slate-200 bg-white p-4">
-          <summary className="cursor-pointer text-sm font-semibold text-ink">Advanced options</summary>
-          <div className="mt-4 space-y-6">
-            <div className="flex flex-wrap gap-3">
-              <label className="flex items-center gap-2 text-sm">
-                <input type="checkbox" checked={includeCanon} onChange={() => setIncludeCanon(!includeCanon)} />
-                Include Canon
-              </label>
-              <label className="flex items-center gap-2 text-sm">
-                <input
-                  type="checkbox"
-                  checked={includeCurrent}
-                  onChange={() => setIncludeCurrent(!includeCurrent)}
-                />
-                Include Current
-              </label>
-              <label className="flex items-center gap-2 text-sm">
-                <input
-                  type="checkbox"
-                  checked={includeDeltas}
-                  onChange={() => setIncludeDeltas(!includeDeltas)}
-                />
-                Include Deltas
-              </label>
-            </div>
-            <div className="flex flex-wrap items-center gap-4">
-              <label className="text-sm">Format</label>
-              <select
-                value={format}
-                onChange={(event) => setFormat(event.target.value as "plaintext" | "markdown")}
-                className="rounded-lg border border-slate-200 px-3 py-2 text-sm"
-              >
-                <option value="plaintext">Plaintext</option>
-                <option value="markdown">Markdown</option>
-              </select>
-              <label className="text-sm">Last N Deltas</label>
+        <div className="rounded-2xl border border-slate-200 bg-white p-4">
+          <div className="flex flex-wrap gap-3">
+            <label className="flex items-center gap-2 text-sm">
+              <input type="checkbox" checked={includeCanon} onChange={() => setIncludeCanon(!includeCanon)} />
+              Include Canon
+            </label>
+            <label className="flex items-center gap-2 text-sm">
               <input
-                type="number"
-                min={1}
-                max={20}
-                value={lastN}
-                onChange={(event) => setLastN(Number(event.target.value))}
-                className="w-20 rounded-lg border border-slate-200 px-3 py-2 text-sm"
+                type="checkbox"
+                checked={includeCurrent}
+                onChange={() => setIncludeCurrent(!includeCurrent)}
               />
-            </div>
-            <div>
-              <h3 className="text-sm font-semibold text-ink">Select specific deltas (optional)</h3>
-              <p className="text-xs text-slate-500">
-                Choose deltas to override “last N”. Leave empty to use the latest {lastN} entries.
-              </p>
-              <div className="mt-3 max-h-56 space-y-2 overflow-y-auto pr-2">
-                {sortedDeltas.length === 0 && <p className="text-xs text-slate-500">No deltas yet.</p>}
-                {sortedDeltas.map((delta) => (
-                  <label key={delta.id} className="flex items-start gap-2 text-xs text-slate-600">
-                    <input
-                      type="checkbox"
-                      checked={selectedIds.includes(delta.id)}
-                      onChange={() => {
-                        setSelectedIds((prev) =>
-                          prev.includes(delta.id) ? prev.filter((id) => id !== delta.id) : prev.concat(delta.id)
-                        );
-                      }}
-                    />
-                    <span>
-                      {delta.dateISO} · {delta.area} · {delta.type} — {delta.summary}
-                    </span>
-                  </label>
-                ))}
-              </div>
+              Include Current
+            </label>
+            <label className="flex items-center gap-2 text-sm">
+              <input
+                type="checkbox"
+                checked={includeDeltas}
+                onChange={() => setIncludeDeltas(!includeDeltas)}
+              />
+              Include Deltas
+            </label>
+          </div>
+          <div className="mt-4 flex flex-wrap items-center gap-4">
+            <label className="text-sm">Format</label>
+            <select
+              value={format}
+              onChange={(event) => setFormat(event.target.value as "plaintext" | "markdown")}
+              className="rounded-lg border border-slate-200 px-3 py-2 text-sm"
+            >
+              <option value="plaintext">Plaintext</option>
+              <option value="markdown">Markdown</option>
+            </select>
+            <label className="text-sm">Last N Deltas</label>
+            <input
+              type="number"
+              min={1}
+              max={20}
+              value={lastN}
+              onChange={(event) => setLastN(Number(event.target.value))}
+              className="w-20 rounded-lg border border-slate-200 px-3 py-2 text-sm"
+            />
+          </div>
+          <div className="mt-6">
+            <h3 className="text-sm font-semibold text-ink">Select specific deltas (optional)</h3>
+            <p className="text-xs text-slate-500">
+              Choose deltas to override “last N”. Leave empty to use the latest {lastN} entries.
+            </p>
+            <div className="mt-3 max-h-56 space-y-2 overflow-y-auto pr-2">
+              {sortedDeltas.length === 0 && <p className="text-xs text-slate-500">No deltas yet.</p>}
+              {sortedDeltas.map((delta) => (
+                <label key={delta.id} className="flex items-start gap-2 text-xs text-slate-600">
+                  <input
+                    type="checkbox"
+                    checked={selectedIds.includes(delta.id)}
+                    onChange={() => {
+                      setSelectedIds((prev) =>
+                        prev.includes(delta.id) ? prev.filter((id) => id !== delta.id) : prev.concat(delta.id)
+                      );
+                    }}
+                  />
+                  <span>
+                    {delta.dateISO} · {delta.area} · {delta.type} — {delta.summary}
+                  </span>
+                </label>
+              ))}
             </div>
           </div>
-        </details>
+        </div>
 
         <div className="rounded-2xl border border-slate-200 bg-white p-4">
           <h3 className="text-sm font-semibold text-ink">Output</h3>
