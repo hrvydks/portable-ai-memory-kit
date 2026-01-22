@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import Link from "next/link";
 import { exportAll, mergeAll, replaceAll, resetAll } from "@/lib/storage";
 import { buildContextPack } from "@/lib/contextPack";
 import { normalizeData, validateData } from "@/lib/validation";
@@ -148,28 +147,6 @@ export default function SettingsPage() {
         >
           Reset all data
         </button>
-      </section>
-
-      <section className="rounded-2xl border border-slate-200 bg-white p-4">
-        <h3 className="text-lg font-semibold text-ink">Advanced</h3>
-        <p className="text-sm text-slate-600">Jump into detailed editors and tools.</p>
-        <div className="mt-3 flex flex-wrap gap-3 text-sm font-semibold text-accent">
-          <Link href="/canon" className="underline">
-            My Basics
-          </Link>
-          <Link href="/current" className="underline">
-            What’s going on now
-          </Link>
-          <Link href="/deltas" className="underline">
-            Updates
-          </Link>
-          <Link href="/context-pack" className="underline">
-            Copy for AI
-          </Link>
-          <Link href="/quickstart" className="underline">
-            Quickstart
-          </Link>
-        </div>
       </section>
     </div>
   );

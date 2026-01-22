@@ -1,8 +1,12 @@
 import Link from "next/link";
 
 const navItems = [
-  { href: "/", label: "Home" },
-  { href: "/settings", label: "Settings" }
+  { href: "/canon", label: "Canon" },
+  { href: "/current", label: "Current" },
+  { href: "/deltas", label: "Deltas" },
+  { href: "/context-pack", label: "Context Pack" },
+  { href: "/settings", label: "Settings" },
+  { href: "/quickstart", label: "Quickstart" }
 ];
 
 export default function Sidebar() {
