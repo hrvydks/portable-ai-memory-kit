@@ -1,0 +1,45 @@
+{
+  "canon": {
+    "id": "canon",
+    "updatedAt": 1726867200000,
+    "identityGoals": "I lead a small product studio focused on calm, useful software.",
+    "rules": "Be concise. Prefer bullet points. Flag unknowns explicitly.",
+    "preferences": "Use friendly, direct tone. Offer 2 options when uncertain.",
+    "glossary": "MVP = minimum viable prototype. P0 = urgent today."
+  },
+  "current": {
+    "id": "current",
+    "updatedAt": 1726867200000,
+    "now": "Wrapping a new onboarding flow for the Portable AI Memory Kit.",
+    "today": "Draft copy for the Quickstart page and polish context pack output."
+  },
+  "deltas": [
+    {
+      "id": "delta-001",
+      "dateISO": "2024-09-15",
+      "area": "Work",
+      "type": "Decision",
+      "summary": "Adopt local-first storage",
+      "details": "IndexedDB is primary, localStorage fallback.",
+      "tags": ["storage", "architecture"]
+    },
+    {
+      "id": "delta-002",
+      "dateISO": "2024-09-18",
+      "area": "Work",
+      "type": "Update",
+      "summary": "Context Pack format locked",
+      "details": "Plaintext and Markdown outputs share the same structure.",
+      "tags": ["context-pack"]
+    },
+    {
+      "id": "delta-003",
+      "dateISO": "2024-09-19",
+      "area": "Personal",
+      "type": "Insight",
+      "summary": "Short checklists reduce handoff friction",
+      "details": "Two-level bullets work best for model switching notes.",
+      "tags": ["workflow"]
+    }
+  ]
+}
