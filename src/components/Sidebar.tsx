@@ -1,13 +1,12 @@
 import Link from "next/link";
 
 const navItems = [
-  { href: "/", label: "Copy for AI" },
-  { href: "/canon", label: "My Basics" },
-  { href: "/current", label: "Right now" },
-  { href: "/deltas", label: "Updates" },
-  { href: "/context-pack", label: "Advanced" },
+  { href: "/canon", label: "Canon" },
+  { href: "/current", label: "Current" },
+  { href: "/deltas", label: "Deltas" },
+  { href: "/context-pack", label: "Context Pack" },
   { href: "/settings", label: "Settings" },
-  { href: "/quickstart", label: "Help" }
+  { href: "/quickstart", label: "Quickstart" }
 ];
 
 export default function Sidebar() {
